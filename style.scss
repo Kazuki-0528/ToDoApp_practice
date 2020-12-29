@@ -1,0 +1,36 @@
+$cWhite: white;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  background-color: $cWhite;
+  display: grid;
+  grid-template:
+    "......" 25px
+    "title"
+    "......" 10px
+    "input "
+    "......"
+    "item  ";
+}
+
+h1 {
+  grid-area: title;
+  text-align: center;
+}
+
+.input_div {
+  grid-area: input;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  grid-area: item;
+}
