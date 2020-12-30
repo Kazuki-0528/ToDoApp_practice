@@ -8,14 +8,14 @@ class Item {
   }
 
   createDiv(itemName) {
+    let itemBox = document.createElement("div");
+    itemBox.classList.add("item");
+
     let input = document.createElement("input");
     input.value = itemName;
     input.disabled = true;
     input.classList.add("item_input");
     input.type = "text";
-
-    let itemBox = document.createElement("div");
-    itemBox.classList.add("item");
 
     let editButton = document.createElement("button");
     editButton.innerHTML = "EDIT";
