@@ -9,13 +9,13 @@ class Item {
 
   createDiv(itemName) {
     let itemBox = document.createElement("div");
-    itemBox.classList.add("input_div");
+    itemBox.classList.add("item");
 
     let input = document.createElement("input");
-    input.classList.add("item_input");
     input.value = itemName;
-    input.type = "text";
     input.disabled = true;
+    input.classList.add("item_input");
+    input.type = "text";
 
     let editButton = document.createElement("button");
     editButton.innerHTML = "EDIT";
@@ -25,21 +25,27 @@ class Item {
     removeButton.innerHTML = "REMOVE";
     removeButton.classList.add("removeButton");
 
+    container.appendChild(itemBox);
+
+    itemBox.appendChild(input);
+    itemBox.appendChild(editButton);
+    itemBox.appendChild(removeButton);
+
     editButton.addEventListener("click", () => {
-      this.edit(itemBox);
+      this.edit(input);
     });
 
     removeButton.addEventListener("click", () => {
-      this.remove(item);
+      this.remove(itemBox);
     });
   }
 
-  edit(itemBox) {
-    input.disabled = !disabled;
+  edit(input) {
+    input.disabled = !input.disabled;
   }
 
   remove(item) {
-    itemBox.removeChild(item);
+    container.removeChild(item);
   }
 }
 
@@ -52,7 +58,7 @@ function check() {
 
 addButton.addEventListener("click", check);
 window.addEventListener("keydown", (e) => {
-  if (e.which == 13) {
+  if (e.key == 13) {
     check();
   }
 });
