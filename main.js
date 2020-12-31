@@ -9,13 +9,13 @@ class Item {
 
   createDiv(itemName) {
     let itemBox = document.createElement("div");
-    itemBox.classList.add("item");
+    itemBox.classList.add("input_div");
 
     let input = document.createElement("input");
-    input.value = itemName;
-    input.disabled = true;
     input.classList.add("item_input");
+    input.value = itemName;
     input.type = "text";
+    input.disabled = true;
 
     let editButton = document.createElement("button");
     editButton.innerHTML = "EDIT";
@@ -25,27 +25,21 @@ class Item {
     removeButton.innerHTML = "REMOVE";
     removeButton.classList.add("removeButton");
 
-    container.appendChild(itemBox);
-
-    itemBox.appendChild(input);
-    itemBox.appendChild(editButton);
-    itemBox.appendChild(removeButton);
-
     editButton.addEventListener("click", () => {
-      this.edit(input);
+      this.edit(itemBox);
     });
 
     removeButton.addEventListener("click", () => {
-      this.remove(itemBox);
+      this.remove(item);
     });
   }
 
-  edit(input) {
-    input.disabled = !input.disabled;
+  edit(itemBox) {
+    input.disabled = !disabled;
   }
 
   remove(item) {
-    container.removeChild(item);
+    itemBox.removeChild(item);
   }
 }
 
