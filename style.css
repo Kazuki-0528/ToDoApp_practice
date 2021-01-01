@@ -1,6 +1,6 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -8,18 +8,17 @@
 body {
   height: 100%;
   background-color: white;
-  display: -ms-grid;
-  display: grid;
-  grid-template: "......" 25px "title" "......" 10px "input " "......" "item  ";
 }
 
 h1 {
-  grid-area: title;
   text-align: center;
 }
 
+.styling {
+  color: #00b3ff;
+}
+
 .input_div {
-  grid-area: input;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,20 +30,24 @@ h1 {
           justify-content: center;
 }
 
-.container {
-  grid-area: item;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.input {
+  outline: none;
+  border-radius: 25px;
+  background-color: rgba(0, 255, 255, 0.39);
+  height: 50px;
+  width: 450px;
+  border: none;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.addButton {
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 119, 255, 0.39);
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
