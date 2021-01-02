@@ -43,3 +43,10 @@ h1 {
   width: 50px;
   cursor: pointer;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
