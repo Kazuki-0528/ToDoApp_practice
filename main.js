@@ -9,25 +9,25 @@ class Item {
 
   createDiv(itemName) {
     let itemBox = document.createElement("div");
-    itemBox.classList.add("itemBox");
+    itemBox.classList.add("item");
 
     let input = document.createElement("input");
-    input.classList.add("input_item");
     input.value = itemName;
-    input.type = "text";
     input.disabled = true;
+    input.classList.add("item_input");
+    input.type = "text";
 
     let doneButton = document.createElement("button");
-    doneButton.classList.add("doneButton");
     doneButton.innerHTML = "DONE";
+    doneButton.classList.add("doneButton");
 
     let editButton = document.createElement("button");
-    editButton.classList.add("editButton");
     editButton.innerHTML = "EDIT";
+    editButton.classList.add("editButton");
 
     let removeButton = document.createElement("button");
-    removeButton.classList.add("removeButton");
     removeButton.innerHTML = "REMOVE";
+    removeButton.classList.add("removeButton");
 
     container.appendChild(itemBox);
 
@@ -40,21 +40,19 @@ class Item {
       input.classList.toggle("done");
     });
 
-    editButton.addEventListener("click", () => {
-      this.edit(input);
-    });
+    editButton.addEventListener("click", () => this.edit(input));
 
-    removeButton.addEventListener("click", () => {
-      this.remove(itemBox);
-    });
+    removeButton.addEventListener("click", () => this.remove(itemBox));
+
+    console.log(itemName);
   }
 
   edit(input) {
     input.disabled = !input.disabled;
   }
 
-  remove(itemBox) {
-    container.removeChild(itemBox);
+  remove(item) {
+    container.removeChild(item);
   }
 }
 
